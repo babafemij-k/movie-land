@@ -7,14 +7,6 @@ import MovieCard from "./components/MovieCard";
 
 function App() {
   const API_URL = "http://www.omdbapi.com?apikey=27077067";
-  const movie1 = {
-    Title: "Spider-Man",
-    Year: "2002",
-    imdbID: "tt0145487",
-    Type: "movie",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
-  };
 
   // State
   const [movies, setMovies] = useState([]);
@@ -52,7 +44,7 @@ function App() {
         />
         <img src={SearchIcon} alt="search" onClick={handleSubmit} />
       </div>
-      {movies.length > 0 ? (
+      {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
             <MovieCard
